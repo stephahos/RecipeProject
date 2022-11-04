@@ -19,6 +19,10 @@ const userSchema = new Schema(
     passwordHash: {
       type: String,
       required: [true, 'Password is required.'],
+    },
+    id: {
+      type: Number,
+      unique:true,
     }
   },
   {

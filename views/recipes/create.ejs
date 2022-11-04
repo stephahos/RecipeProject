@@ -1,0 +1,45 @@
+<h1>Create a new recipe</h1>
+
+<form method="POST" action="/recipes/create">
+    <label>Name your recipe</label>
+        <input type="text" placeholder="name"> 
+    <label for="ingredients">Ingredients List</label>
+      <textarea name="ingredients"  rows='4' cols="50"> </textarea>
+    <label for="instructions">Instructions</label>
+      <input type="text" name="instructions"  placeholder="instructions"> 
+    <label>cooktime</label>
+      <input type="number" placeholder="cooktime">
+
+    <label for="level">Level</label>
+      <input list="level"> <datalist id="level"> 
+        <option value="Easy"> </option>
+        <option value="Amateur Chef"> </option>
+        <option value="Master Chef"> </option>
+      </datalist>
+
+      <label for="dishType">dishType</label>
+      <input list="dishType"> <datalist id="dishType"> 
+        <option value="Breakfast"> </option>
+        <option value="Dish"> </option>
+        <option value="Snack"> </option>
+        <option value="Drink"></option>
+        <option value="Dessert"></option>
+        <option value="Other"></option>
+      </datalist>
+
+      <label for="foodtypetag">foodtypetag</label>
+      <input list="foodtypetag"> <datalist id="foodtypetag"> 
+        <option value="Vegan"> </option>
+        <option value="Vegatarian"> </option>
+        <option value="Gluten-Free"> </option>
+      </datalist>
+
+      <label for="nationaltypetag">nationaltypetag</label>
+      <input list="nationaltypetag"> <datalist id="nationaltypetag"> 
+        <option value="Asian"> </option>
+        <option value="TexMex"> </option>
+        <option value="Italian"> </option>
+      </datalist>
+
+      <button> Submit </button>
+</form>
