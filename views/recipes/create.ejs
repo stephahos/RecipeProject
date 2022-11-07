@@ -1,6 +1,6 @@
 <h1>Create a new recipe</h1>
 <div id="search-container"> 
-<form action="/upload" method="POST" action="/recipes/create">
+<form action="/upload" method="POST" action="/recipes/create" enctype="multipart/form-data" >
 
     <label>Name your recipe</label>
       <input type="text" placeholder="name"> 
@@ -46,7 +46,7 @@
       </datalist>
 
       <label>image</label>
-      <input type="file" name="image" />
+      <input type="file" name="imageUrl" accept="image/png, image/jpg"/>
 
       <button> Submit </button>
 </form>

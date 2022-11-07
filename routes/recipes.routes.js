@@ -2,43 +2,26 @@ const Recipe = require("../models/Recipe.model");
 
 const router = require("express").Router();
 
+//GET my profile page
+router.get("/myprofilepage", (req, res, next) => {
+  console.log(req.session)
+  if (req.session.user) {
+    res.render("recipes/myprofilepage", {user:req.session.user})
+  } else {
+    res.redirect('/auth/login')
+  }
+}) 
+
+
 /* GET search page */
-router.get("/recipes/search", (req, res, next) => {
-    res.render("recipes/search")
+router.get("/search", (req, res, next) => {
+  res.render("recipes/search")
 })
 
 /* GET new recipe form page */
 router.get("/create", (req, res, next) => {
-    res.render("recipes/create")
+  res.render("recipes/create")
 })
-
-/* router.get('/', (req, res, next) => {
-  let isConnected = false
-  const currentUser = User.findOne({ username })
-  req.session.user = currentUser
-  if (currentUser) {
-    isConnected = true
-  }
-  res.render('index', { isConnected })
-})*/
-
-
-/* GET my profile page 
-router.get('/recipes/myprofilepage', (req, res, next) => {
-  console.log('SESSION =====> ', req.session)
-  if (req.session.user) {
-    res.render('myprofilepage', { user: currentUser, isConnected: true })
-  } else {
-    res.redirect('/auth/login')
-  }
-})*/
-
-
-//GET my profile page
-router.get("/myprofilepage", (req, res, next) => {
-  console.log(req.session)
-    res.render("recipes/myprofilepage", {user:req.session.user})
-}) 
 
 
 /* POST new recipe from Create form page to My profile page */ 
