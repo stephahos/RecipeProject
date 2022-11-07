@@ -33,15 +33,12 @@ const recipeSchema = new Schema(
       type: String,
       enum: ['Asian', 'TexMex','Italian']
     },
-    /* image: {
+    image: {
       type: String,
-      default: 'aubergines.jpg'
     },
-    /*creator: {
+    creator: {
       type: Schema.Types.ObjectId,ref:'User',
-      required: true,
-    },*/
-    
+    },
  },
 {
   timestamps : true

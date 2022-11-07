@@ -1,6 +1,6 @@
 const Recipe = require("../models/Recipe.model");
-
 const router = require("express").Router();
+const uploader = require('../config/cloudinary.config');
 
 //GET my profile page
 router.get("/myprofilepage", (req, res, next) => {
@@ -12,7 +12,6 @@ router.get("/myprofilepage", (req, res, next) => {
   }
 }) 
 
-
 /* GET search page */
 router.get("/search", (req, res, next) => {
   res.render("recipes/search")
@@ -23,9 +22,9 @@ router.get("/create", (req, res, next) => {
   res.render("recipes/create")
 })
 
-
 /* POST new recipe from Create form page to My profile page */ 
-router.post('/create', async (req, res) => {
+router.post('/create', uploader.single("imageUrl"),  async (req, res) => {
+  console.log(req.body , req.file)
     try {
       await Recipe.create({
         name: req.body.name,
@@ -36,6 +35,8 @@ router.post('/create', async (req, res) => {
         dishType: req.body.dishType,
         foodtypetag: req.body.foodtypetag,
         nationaltypetag: req.body.nationaltypetag,
+        creator: req.session.user._id,
+        image: req.file.path,
       })
       res.redirect('/recipes/myprofilepage')
     } catch (error) {
@@ -45,7 +46,5 @@ router.post('/create', async (req, res) => {
         console.log('render the recipe creation form view so the user can try again')
     }
   })
-
-
 
 module.exports = router;
