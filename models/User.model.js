@@ -15,15 +15,17 @@ const userSchema = new Schema(
       unique: true,
       lowercase: true,
       trim: true,
+      validate:{
+      validator: function (v) {
+        return /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(v)
+      },
+      message: props => `${props.value} is not a valid email!`,
     },
-    passwordHash: {
+  },
+    password: {
       type: String,
       required: [true, 'Password is required.'],
     },
-    id: {
-      type: Number,
-      unique:true,
-    }
   },
   {
     // this second object adds extra properties: `createdAt` and `updatedAt`    

@@ -1,12 +1,16 @@
 <h1>Create a new recipe</h1>
+<div id="search-container"> 
+<form action="/upload" method="POST" action="/recipes/create">
 
-<form method="POST" action="/recipes/create">
     <label>Name your recipe</label>
-        <input type="text" placeholder="name"> 
+      <input type="text" placeholder="name"> 
+
     <label for="ingredients">Ingredients List</label>
       <textarea name="ingredients"  rows='4' cols="50"> </textarea>
+
     <label for="instructions">Instructions</label>
       <input type="text" name="instructions"  placeholder="instructions"> 
+
     <label>cooktime</label>
       <input type="number" placeholder="cooktime">
 
@@ -41,5 +45,10 @@
         <option value="Italian"> </option>
       </datalist>
 
+      <label>image</label>
+      <input type="file" name="image" />
+
       <button> Submit </button>
 </form>
+
+</div>
