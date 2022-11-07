@@ -35,18 +35,18 @@ router.post('/signup', async (req, res) => {
 /*POST Login page */
 router.post('/login', async (req, res) => {
   const { username, password } = req.body
-  const currentUser = await User.findOne({ username })
-  if (!currentUser) {
+  const user = await User.findOne({ username })
+  if (!user) {
     // What to do if I don't have a user with this username
     res.render('auth/login', { errorMessage: 'No user with this username', isConnected: false })
   } else {
-    // console.log('Found User', currentUser)
-    if (bcrypt.compareSync(password, currentUser.password)) {
+    console.log('Found User', user)
+    if (bcrypt.compareSync(password, user.password)) {
       console.log('Correct password')
     // What to do if I have a user and the correct password
       
-      delete currentUser.password
-      req.session.user = currentUser
+      delete user.password
+      req.session.user = user
       console.log(req.session)
       res.redirect('/recipes/myprofilepage')
     } else {
@@ -56,7 +56,13 @@ router.post('/login', async (req, res) => {
   }
 })
 
-
-
+router.post('/logout', (req, res, next) => {
+  req.session.destroy(err => {
+    if (err) {
+      next(err)
+    }
+    res.redirect('/auth/login')
+  })
+})
 
   module.exports = router;
