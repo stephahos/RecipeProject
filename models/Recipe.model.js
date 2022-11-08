@@ -21,17 +21,13 @@ const recipeSchema = new Schema(
     type: String,
     enum: ['Easy', 'Amateur Chef','Master Chef']
     },
-    dishType: {
-      type: String,
-      enum: ['Breakfast', 'Dish', 'Snack', 'Drink', 'Dessert', 'Other']
-      },
     foodtypetag: {
       type: String,
       enum: ['Vegan', 'Vegatarian','Gluten-Free']
     },
     nationaltypetag: {
       type: String,
-      enum: ['Asian', 'TexMex','Italian']
+      enum: ['Asian', 'TexMex','Italian', 'Scottish', 'French']
     },
     image: {
       type: String,
