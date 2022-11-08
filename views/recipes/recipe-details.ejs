@@ -1,3 +1,5 @@
+<a href="/recipes/allRecipes/"> See all Recipes </a>
+
 <p>The Recipe details</p>
 
 <img class='imagesRecipedetails' src = '<%- recipe.image %>'/>
@@ -10,3 +12,7 @@
   <li><%= currentIngredients%></li>
   <% }) %>
 </ul>
+
+<a href="/recipes/allRecipes/<%= recipe._id %>/update"> Update the recipe </a>
+
+<a href="/recipes/allRecipes/<%= recipe._id %>/delete">Delete recipe</a>

@@ -4,7 +4,6 @@ const uploader = require('../config/cloudinary.config');
 
 //GET my profile page
 router.get("/myprofilepage", async(req, res, next) => {
-  console.log(req.session)
   //const Recipes = await Recipe.find()
   if (req.session.user) {
     res.render("recipes/myprofilepage", {user:req.session.user})
@@ -26,7 +25,6 @@ router.get('/allRecipes', async (req, res, next) => {
 
 //Get Recipe by ID => Recipe Details
 router.get('/allRecipes/:recipeId', async (req, res, next) => {
-  console.log(req.params.recipeId)
   const recipe = await Recipe.findById(req.params.recipeId)
   res.render('recipes/recipe-details', { recipe })
 })
@@ -43,7 +41,6 @@ router.get("/create", (req, res, next) => {
 
 /* POST new recipe from Create form page to My profile page */ 
 router.post('/create', uploader.single("imageUrl"),  async (req, res) => {
-  console.log(req.body , req.file)
     try {
       await Recipe.create({
         name: req.body.name,
@@ -57,31 +54,37 @@ router.post('/create', uploader.single("imageUrl"),  async (req, res) => {
         creator: req.session.user._id,
         image: req.file.path,
       })
-      res.redirect('/recipes/myprofilepage')
+      res.redirect('/recipes/allRecipes')
     } catch (error) {
-        console.log(req.body.name)
+
         console.log(error)
       res.render('recipes/create')
         console.log('render the recipe creation form view so the user can try again')
     }
   })
 
-//to Update a recipe
-router.get('/update/:recipeId', async (req, res) => {
+//Get Update recipe page
+router.get('/allRecipes/:recipeId/update', async (req, res) => {
   const recipe = await Recipe.findById(req.params.recipeId)
-  res.render('updated-movie', { recipe })
+  res.render('recipes/update', { recipe })
 })
 
-router.post('/update/:recipeId', async (req, res) => {
-  console.log(req.body)
-  await Recipe.findByIdAndUpdate(req.params.recipeId, { ...req.body, name: req.body.name })
-  res.redirect(`/recipes/${req.params.recipeId}`)
+router.post('/allRecipes/:recipeId/update', async (req, res) => {
+  const recipeCreator = await Recipe.findById(req.params.recipeId).populate("creator")
+  if (req.session.user._id === recipeCreator.creator._id.toString()) {
+  await Recipe.findByIdAndUpdate(req.params.recipeId, { ...req.body, name: req.body.name, ingredients: req.body.ingredients, instructions: req.body.instructions, cooktime: req.body.cooktime, 
+    level: req.body.level, dishType: req.body.dishType, foodtypetag: req.body.foodtypetag, nationaltypetag: req.body.nationaltypetag })
+  res.redirect(`/recipes/allRecipes/${req.params.recipeId}`)
+}})
+
+//To Delete a movie
+router.get('/allRecipes/:recipeId/delete', async (req, res) => {
+  try {
+    await Recipe.findByIdAndDelete(req.params.recipeId)
+    res.redirect('/recipes/allRecipes')
+  } catch (error) {
+    console.log(error)
+  }
 })
-
-
-
-
-
-
 
 module.exports = router;

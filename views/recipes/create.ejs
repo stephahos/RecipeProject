@@ -1,4 +1,6 @@
 <h1>Create a new recipe</h1>
+
+
 <div id="search-container"> 
 
 <form method="POST" action="/recipes/create" enctype="multipart/form-data">
@@ -13,14 +15,16 @@
       <textarea name="instructions"  rows='4' cols="50" placeholder="instructions" > </textarea>
 
     <label>cooktime</label>
-      <input type="number" name="cooktime" placeholder="cooktime">
+      <input type="number" id="cooktime" name="cooktime" placeholder="cooktime">
 
     <label for="level">Level</label>
-      <input list="level"> <datalist id="level" name="level"> 
-        <option value="Easy"> </option>
-        <option value="Amateur Chef"> </option>
-        <option value="Master Chef"> </option>
-      </datalist>
+     
+        <select name="level" id="level">
+        <option value="Easy"> Easy </option>
+        <option value="Amateur Chef">Amateur Chef </option>
+        <option value="Master Chef">Master Chef </option>
+        </select>
+
 
       <label for="dishType">dishType</label>
       <input list="dishType"> <datalist id="dishType" name="dishType"> 
