@@ -1,0 +1,12 @@
+<p>The Recipe details</p>
+
+<img class='imagesRecipedetails' src = '<%- recipe.image %>'/>
+<h4><%= recipe.name %></h4>
+<h4><%= recipe.cooktime %></h4>
+<h4><%= recipe.level %></h4>
+<h4><%= recipe.instructions %></h4>
+<ul>
+  <% recipe.ingredients.forEach(currentIngredients => { %>
+  <li><%= currentIngredients%></li>
+  <% }) %>
+</ul>
