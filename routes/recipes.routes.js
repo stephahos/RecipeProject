@@ -77,7 +77,7 @@ router.post('/allRecipes/:recipeId/update', async (req, res) => {
   res.redirect(`/recipes/allRecipes/${req.params.recipeId}`)
 }})
 
-//To Delete a movie
+//To Delete a recipe
 router.get('/allRecipes/:recipeId/delete', async (req, res) => {
   try {
     await Recipe.findByIdAndDelete(req.params.recipeId)

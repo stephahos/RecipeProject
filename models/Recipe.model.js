@@ -27,7 +27,7 @@ const recipeSchema = new Schema(
     },
     nationaltypetag: {
       type: String,
-      enum: ['Asian', 'TexMex','Italian', 'Scottish', 'French']
+      enum: ['Asian', 'TexMex','Italian', 'Scottish', 'French','Japanese','Indian']
     },
     image: {
       type: String,

@@ -5,7 +5,7 @@
 
 <form method="POST" action="/recipes/create" enctype="multipart/form-data">
 
-    <label>Name your recipe</label>
+    <label>Dish Name</label>
       <input type="text" name="name" placeholder="name"> 
 
     <label for="ingredients">Ingredients List</label>
@@ -25,17 +25,6 @@
         <option value="Master Chef">Master Chef </option>
         </select>
 
-
-      <label for="dishType">dishType</label>
-      <input list="dishType"> <datalist id="dishType" name="dishType"> 
-        <option value="Breakfast"> </option>
-        <option value="Dish"> </option>
-        <option value="Snack"> </option>
-        <option value="Drink"></option>
-        <option value="Dessert"></option>
-        <option value="Other"></option>
-      </datalist>
-
       <label for="foodtypetag">foodtypetag</label>
       <input list="foodtypetag"> <datalist id="foodtypetag" name="foodtypetag"> 
         <option value="Vegan"> </option>
@@ -48,6 +37,10 @@
         <option value="Asian"> </option>
         <option value="TexMex"> </option>
         <option value="Italian"> </option>
+        <option value="Scottish"> </option>
+        <option value="French"> </option>
+        <option value="Japanese"> </option>
+        <option value="Indian"> </option>
       </datalist>
 
           <input type="file" name="imageUrl" accept="image/png, image/jpg">
