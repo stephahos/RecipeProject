@@ -48,7 +48,6 @@ router.post('/create', uploader.single("imageUrl"),  async (req, res) => {
         instructions: req.body.instructions,
         cooktime: req.body.cooktime,
         level: req.body.level,
-        dishType: req.body.dishType,
         foodtypetag: req.body.foodtypetag,
         nationaltypetag: req.body.nationaltypetag,
         creator: req.session.user._id,
@@ -73,18 +72,20 @@ router.post('/allRecipes/:recipeId/update', async (req, res) => {
   const recipeCreator = await Recipe.findById(req.params.recipeId).populate("creator")
   if (req.session.user._id === recipeCreator.creator._id.toString()) {
   await Recipe.findByIdAndUpdate(req.params.recipeId, { ...req.body, name: req.body.name, ingredients: req.body.ingredients, instructions: req.body.instructions, cooktime: req.body.cooktime, 
-    level: req.body.level, dishType: req.body.dishType, foodtypetag: req.body.foodtypetag, nationaltypetag: req.body.nationaltypetag })
+    level: req.body.level, foodtypetag: req.body.foodtypetag, nationaltypetag: req.body.nationaltypetag })
   res.redirect(`/recipes/allRecipes/${req.params.recipeId}`)
 }})
 
 //To Delete a recipe
 router.get('/allRecipes/:recipeId/delete', async (req, res) => {
+  const recipeCreator = await Recipe.findById(req.params.recipeId).populate("creator")
+  if (req.session.user._id === recipeCreator.creator._id.toString()) {
   try {
     await Recipe.findByIdAndDelete(req.params.recipeId)
     res.redirect('/recipes/allRecipes')
   } catch (error) {
     console.log(error)
   }
-})
+}})
 
 module.exports = router;
