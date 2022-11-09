@@ -35,19 +35,28 @@ router.get("/search", (req, res, next) => {
   res.render("recipes/search");
 })
 
+
+
+
 // SUBMIT SEARCH FILTERS:
 router.get('/results', async (req, res) => {
+  /*
+  
+  */
+  
+
   const { name, nationaltypetag, cooktime, level } = req.query;
-
+  //matches substrings:
+  const re = new RegExp(`/.*${name}.*/`);
   const results = await Recipe.find(
-    {name: name , cooktime: cooktime , level: level}
-
+    {re: re , nationaltypetag: nationaltypetag , cooktime: {$lte: cooktime} , level: level}
+    
 
   )
 
   console.log(results)
   res.render("recipes/results", { results });
-  
+  console.log(nationaltypetag)
 
 })
 
