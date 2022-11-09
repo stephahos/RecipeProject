@@ -31,20 +31,20 @@ router.get('/allRecipes/:recipeId', async (req, res, next) => {
 
 /* GET search page */
 router.get("/search", (req, res, next) => {
-  res.render("recipes/search")
+  res.render("recipes/search");
 })
 
 // SUBMIT SEARCH FILTERS:
-router.post('/search', async (req, res) => {
-  const { name, quantity, nationaltypetag } = req.body;
-  await console.log(name, quantity, nationaltypetag)
-}
-)
-
-
-
-
-
+router.get('/results', async (req, res) => {
+  const { name, nationaltypetag, cooktime } = req.query;
+  const results = await Recipe.find(
+    {name: name},
+    {name: cooktime}
+  )
+  res.render("recipes/results", { results });
+  
+  console.log(results)
+})
 
 /* GET new recipe form page */
 router.get("/create", (req, res, next) => {

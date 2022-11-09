@@ -1,64 +1,78 @@
-<h1>Edit a recipe</h1>
+<div class="containerCreate" id="create-container">
+  <h1>Edit Your Recipe</h1>
 
-<form method="POST" action="/recipes/allRecipes/<%= recipe._id %>/update">
+  <form method="POST" action="/recipes/allRecipes/<%= recipe._id %>/update">
 
-        <label>Recipe Name</label>
-          <input type="text" value="<%- recipe.name %>"> 
-    
-        <label for="ingredients">Ingredients</label>
-          <textarea name="ingredients" rows='4' cols="50"> <%- recipe.ingredients[0] %></textarea>
-    
-        <label for="instructions">Instructions</label>
-          <textarea name="instructions"  rows='4' cols="50"><%- recipe.instructions %> </textarea>
-    
+    <div class="createLabel">
+      <label>Dish Name</label>
+      <input type="text" value="<%- recipe.name %>">
+    </div> 
+
+    <div class="createLabel">
+      <label for="ingredients">Ingredients</label>
+      <textarea name="ingredients" rows='4' cols="50"> <%- recipe.ingredients[0] %></textarea>
+    </div>
+
+    <div class="createLabel">
+      <label for="instructions">Instructions</label>
+      <textarea name="instructions"  rows='4' cols="50"><%- recipe.instructions %> </textarea>
+    </div>
+      
+      <div class="createLabel">
         <label>Cooking Time</label>
-          <input type="number" name="cooktime"  value="<%- recipe.cooktime %>">
-    
-        <label for="level">Difficulty</label>
-       <select name="level" id="level">
-        <% if(recipe.level === "Amateur Chef" ) { %>
-          <option value="Easy"> Easy </option>
-          <option value="Amateur Chef" selected>Amateur Chef </option>
-          <option value="Master Chef">Master Chef</option>
-         <%}else if (recipe.level === "Easy" ) { %>
-          <option value="Easy" selected> Easy </option>
-          <option value="Amateur Chef" >Amateur Chef </option>
-          <option value="Master Chef">Master Chef</option>
-       <% } else if (recipe.level === "Master Chef" ) { %>
-        <option value="Easy" > Easy </option>
-        <option value="Amateur Chef" >Amateur Chef </option>
-        <option value="Master Chef" selected>Master Chef</option>
-       <% }%>
-       </select>
+        <input type="number" name="cooktime"  value="<%- recipe.cooktime %>">
+      </div>
 
-          <label for="foodtypetag">Dietery Requirements</label>
-          <select name="foodtypetag" id="foodtypetag"> 
-          <% if(recipe.foodtypetag === "Vegan" ) { %>
+      <div class="createLabel">
+        <label for="level">Difficulty</label>
+          <select name="level" id="level">
+            <% if(recipe.level === "Amateur Chef" ) { %>
+              <option value="Easy"> Easy </option>
+              <option value="Amateur Chef" selected>Amateur Chef </option>
+              <option value="Master Chef">Master Chef</option>
+              <%}else if (recipe.level === "Easy" ) { %>
+              <option value="Easy" selected> Easy </option>
+              <option value="Amateur Chef" >Amateur Chef </option>
+              <option value="Master Chef">Master Chef</option>
+              <% } else if (recipe.level === "Master Chef" ) { %>
+              <option value="Easy" > Easy </option>
+              <option value="Amateur Chef" >Amateur Chef </option>
+              <option value="Master Chef" selected>Master Chef</option>
+              <% }%>
+          </select>
+      </div>
+
+      <div class="createLabel">
+        <label for="foodtypetag">Dietery Requirements</label>
+        <select name="foodtypetag" id="foodtypetag"> 
+        <% if(recipe.foodtypetag === "Vegan" ) { %>
             <option value="Vegan"selected>Vegan </option>
             <option value="Vegatarian">Vegatarian </option>
             <option value="Gluten-Free">Gluten-Free</option>
-           <%}else if (recipe.level === "Vegatarian" ) { %>
+          <%}else if (recipe.level === "Vegatarian" ) { %>
             <option value="Vegan">Vegan </option>
             <option value="Vegatarian"selected>Vegatarian </option>
             <option value="Gluten-Free">Gluten-Free</option>
-         <% } else if (recipe.level === "Gluten-Free" ) { %>
-          <option value="Vegan">Vegan </option>
+        <% } else if (recipe.level === "Gluten-Free" ) { %>
+            <option value="Vegan">Vegan </option>
             <option value="Vegatarian">Vegatarian </option>
             <option value="Gluten-Free"selected>Gluten-Free</option>
-         <% }%>
-         </select>
-    
-          <label for="nationaltypetag">Cuisine</label>
-          <select name="nationaltypetag" id="nationaltypetag">  
+        <% }%>
+        </select>
+      </div>
+
+      <div class="createLabel">
+        <label for="nationaltypetag">Cuisine</label>
+          <select name="nationaltypetag" id="nationaltypetag">
             <% if(recipe.nationaltypetag === "Asian" ) { %>
               <option value="Asian"selected>Asian </option>
-            <option value="Tex-Mex"> Tex-Mex</option>
-            <option value="Italian">Italian </option>
-            <option value="Scottish">Scottish </option>
-            <option value="French"> French</option>
-            <option value="Japanese">Japanese </option>
-            <option value="Indian">Indian </option>
-             <%}else if (recipe.nationaltypetag === "Tex-Mex" ) { %>
+              <option value="Tex-Mex"> Tex-Mex</option>
+              <option value="Italian">Italian </option>
+              <option value="Scottish">Scottish </option>
+              <option value="French"> French</option>
+              <option value="Japanese">Japanese </option>
+              <option value="Indian">Indian </option>
+            <%}else if (recipe.nationaltypetag === "Tex-Mex" ) { %>
               <option value="Asian">Asian </option>
               <option value="Tex-Mex"selected> Tex-Mex</option>
               <option value="Italian">Italian </option>
@@ -66,51 +80,58 @@
               <option value="French"> French</option>
               <option value="Japanese">Japanese </option>
               <option value="Indian">Indian </option>
-           <% } else if (recipe.nationaltypetag === "Italian" ) { %>
-            <option value="Asian">Asian </option>
-            <option value="Tex-Mex"> Tex-Mex</option>
-            <option value="Italian"selected>Italian </option>
-            <option value="Scottish">Scottish </option>
-            <option value="French"> French</option>
-            <option value="Japanese">Japanese </option>
-            <option value="Indian">Indian </option>
-           <% } else if (recipe.nationaltypetag === "Scottish" ) { %>
-            <option value="Asian">Asian </option>
-            <option value="Tex-Mex"> Tex-Mex</option>
-            <option value="Italian">Italian </option>
-            <option value="Scottish"selected>Scottish </option>
-            <option value="French"> French</option>
-            <option value="Japanese">Japanese </option>
-            <option value="Indian">Indian </option>
+            <% } else if (recipe.nationaltypetag === "Italian" ) { %>
+              <option value="Asian">Asian </option>
+              <option value="Tex-Mex"> Tex-Mex</option>
+              <option value="Italian"selected>Italian </option>
+              <option value="Scottish">Scottish </option>
+              <option value="French"> French</option>
+              <option value="Japanese">Japanese </option>
+              <option value="Indian">Indian </option>
+            <% } else if (recipe.nationaltypetag === "Scottish" ) { %>
+              <option value="Asian">Asian </option>
+              <option value="Tex-Mex"> Tex-Mex</option>
+              <option value="Italian">Italian </option>
+              <option value="Scottish"selected>Scottish </option>
+              <option value="French"> French</option>
+              <option value="Japanese">Japanese </option>
+              <option value="Indian">Indian </option>
             <% } else if (recipe.nationaltypetag === "French" ) { %>
-            <option value="Asian">Asian </option>
-            <option value="Tex-Mex"> Tex-Mex</option>
-            <option value="Italian">Italian </option>
-            <option value="Scottish">Scottish </option>
-            <option value="French"selected> French</option>
-            <option value="Japanese">Japanese </option>
-            <option value="Indian">Indian </option>
+              <option value="Asian">Asian </option>
+              <option value="Tex-Mex"> Tex-Mex</option>
+              <option value="Italian">Italian </option>
+              <option value="Scottish">Scottish </option>
+              <option value="French"selected> French</option>
+              <option value="Japanese">Japanese </option>
+              <option value="Indian">Indian </option>
             <% } else if (recipe.nationaltypetag === "Japanese" ) { %>
               <option value="Asian">Asian </option>
-            <option value="Tex-Mex"> Tex-Mex</option>
-            <option value="Italian">Italian </option>
-            <option value="Scottish">Scottish </option>
-            <option value="French"> French</option>
-            <option value="Japanese"selected>Japanese</option>
-            <option value="Indian">Indian </option>
+              <option value="Tex-Mex"> Tex-Mex</option>
+              <option value="Italian">Italian </option>
+              <option value="Scottish">Scottish </option>
+              <option value="French"> French</option>
+              <option value="Japanese"selected>Japanese</option>
+              <option value="Indian">Indian </option>
             <% } else if (recipe.nationaltypetag === "Indian" ){ %>
-            <option value="Asian">Asian </option>
-            <option value="Tex-Mex"> Tex-Mex</option>
-            <option value="Italian">Italian </option>
-            <option value="Scottish">Scottish </option>
-            <option value="French"> French</option>
-            <option value="Japanese">Japanese</option>
-            <option value="Indian"selected>Indian </option>
+              <option value="Asian">Asian </option>
+              <option value="Tex-Mex"> Tex-Mex</option>
+              <option value="Italian">Italian </option>
+              <option value="Scottish">Scottish </option>
+              <option value="French"> French</option>
+              <option value="Japanese">Japanese</option>
+              <option value="Indian"selected>Indian </option>
             <% } %>
-          </datalist>
-    
-          <label for="imageUrl">Image</label>
-          <input type="file" name="imageUrl" accept="image/png, image/jpg" value="<%- recipe.imageUrl %>">
-    
-          <button> Submit </button>
-    </form>
+            </select>
+    </div>
+
+    <div class="ImgCreateLabel">
+      <label for="imageUrl">Image</label>
+      <input type="file" name="imageUrl" accept="image/png, image/jpg" value="<%- recipe.imageUrl %>">
+    </div>
+
+      <div class="col-auto">
+        <button class="col-form-label form-control"> Submit </button>
+      </div>
+  </form>
+
+</div>

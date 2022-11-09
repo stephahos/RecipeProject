@@ -1,32 +1,27 @@
 <h1>Search for a recipe</h1>
 
 <div id="search-container"> 
-<form method="POST" action="/recipes/search">
+<form method="GET" action="/recipes/results">
       <label><input type="text" name="name"   placeholder="Dish Name" > </label>
       <br>
             <label for="Number">Preparation Time Minutes (Maximum):</label>
-            <input type="number" id="quantity" name="quantity" min="1" max="999">
-          </form>
+            <input type="number" id="cooktime" name="cooktime" min="1" max="999">
       <br>
-      <form action="/action_page.php">Dietary Requirements: 
             <input type="checkbox" id="veggie" name="veggie" value="vegetarian">
             <label for="veggie"> Vegetarian</label>
             <input type="checkbox" id="vegan" name="vegan" value="vegan">
             <label for="vegan"> Vegan</label>
             <input type="checkbox" id="gf" name="gf" value="gluten-free">
             <label for="gf"> Gluten-Free</label>
-      </form>
       <br>
-      <form action="/action_page.php">Difficulty: 
             <input type="checkbox" id="easy" name="easy" value="easy">
             <label for="easy"> Easy</label>
             <input type="checkbox" id="medium" name="medium" value="medium">
             <label for="medium"> Amateur Chef</label>
             <input type="checkbox" id="hard" name="hard" value="hard">
             <label for="hard"> Master Chef</label>
-      </form>
 
-      <br><select id="nationaltypetag">
+      <br><select id="nationaltypetag" name="nationaltypetag">
             <option value="">Cuisine</option>
         <option value="Asian">Asian</option>
         <option value="TexMex">Tex-Mex</option>
