@@ -34,6 +34,12 @@ router.get("/search", (req, res, next) => {
   res.render("recipes/search")
 })
 
+
+
+
+
+
+
 /* GET new recipe form page */
 router.get("/create", (req, res, next) => {
   res.render("recipes/create")
@@ -87,5 +93,15 @@ router.get('/allRecipes/:recipeId/delete', async (req, res) => {
     console.log(error)
   }
 }})
+
+
+
+/* GET Myrecipes page */
+router.get("/myrecipes", (req, res, next) => {
+  res.render("recipes/myrecipes")
+})
+
+
+
 
 module.exports = router;

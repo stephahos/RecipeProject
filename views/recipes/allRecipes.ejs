@@ -2,15 +2,40 @@
 
 <h2>All Recipes</h2>
 
-<ul class="ul">
+<ul class="ul-allrecipes">
   <% Recipes.forEach(recipe => { %>
-  <div class= "card">
-  <li><a href="/recipes/allRecipes/<%- recipe._id %>"> <img class='imagesRecipeList' src = '<%- recipe.image %>'/> </a></li>
+  <div class= "cardAll">
+  <li><a href="/recipes/allRecipes/<%- recipe._id %>"> <img class='card_imageAll' src = '<%- recipe.image %>'/> </a></li>
   <div class="container"> 
-  <h4><%= recipe.name %></h4>
-  <h4><%= recipe.cooktime %></h4>
-  <h4><%= recipe.level %></h4>
+  <div class="card_title"><p><%= recipe.name %></p> </div>
+  <div class="card_cooktime"><p><%= recipe.cooktime %></p></div>
+  <div class="card_level"><p><%= recipe.level %></p></div>
   </div>
 </div>
   <% }) %>
 </ul>
+
+
+<div class="containernice">
+  <% Recipes.forEach(recipe => { %>
+    <li><a href="/recipes/allRecipes/<%- recipe._id %>"> <img class='card_imagebis' src = '<%- recipe.image %>'/> </a></li>
+  <div class="containertext">
+    
+   <h1><%= recipe.name %></h1>
+   <div class="container__text__star">
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+   </div>
+   <div class="container__text__timing">
+    <div class="container__text__timing_time">
+     <h2>Hands-on Time</h2>
+     <p><%= recipe.cooktime %> min</p>
+     <button class="btnCard">view recipe <i class="fa fa-arrow-right"></i></button>
+    </div>
+   </div>
+   <% }) %>
+  </div>
+ </div>
