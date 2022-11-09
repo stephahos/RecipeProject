@@ -23,7 +23,7 @@ const recipeSchema = new Schema(
     },
     foodtypetag: {
       type: String,
-      enum: ['Vegan', 'Vegatarian','Gluten-Free']
+      enum: ['Vegan', 'Vegetarian','Gluten-Free']
     },
     nationaltypetag: {
       type: String,

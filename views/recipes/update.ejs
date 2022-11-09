@@ -1,7 +1,7 @@
-<h1>Edit a recipe</h1>
+<h1>Update a recipe</h1>
 
+<div class="containerCreate" id="create-container"> 
 <form method="POST" action="/recipes/allRecipes/<%= recipe._id %>/update">
-
         <label>Recipe Name</label>
           <input type="text" value="<%- recipe.name %>"> 
     
@@ -20,7 +20,7 @@
           <option value="Easy"> Easy </option>
           <option value="Amateur Chef" selected>Amateur Chef </option>
           <option value="Master Chef">Master Chef</option>
-         <%}else if (recipe.level === "Easy" ) { %>
+         <% } else if (recipe.level === "Easy" ) { %>
           <option value="Easy" selected> Easy </option>
           <option value="Amateur Chef" >Amateur Chef </option>
           <option value="Master Chef">Master Chef</option>
@@ -35,15 +35,15 @@
           <select name="foodtypetag" id="foodtypetag"> 
           <% if(recipe.foodtypetag === "Vegan" ) { %>
             <option value="Vegan"selected>Vegan </option>
-            <option value="Vegatarian">Vegatarian </option>
+            <option value="Vegetarian">Vegetarian </option>
             <option value="Gluten-Free">Gluten-Free</option>
-           <%}else if (recipe.level === "Vegatarian" ) { %>
+           <%}else if (recipe.foodtypetag === "Vegatarian" ) { %>
             <option value="Vegan">Vegan </option>
-            <option value="Vegatarian"selected>Vegatarian </option>
+            <option value="Vegetarian"selected>Vegetarian </option>
             <option value="Gluten-Free">Gluten-Free</option>
-         <% } else if (recipe.level === "Gluten-Free" ) { %>
+         <% } else if (recipe.foodtypetag === "Gluten-Free" ) { %>
           <option value="Vegan">Vegan </option>
-            <option value="Vegatarian">Vegatarian </option>
+            <option value="Vegetarian">Vegetarian </option>
             <option value="Gluten-Free"selected>Gluten-Free</option>
          <% }%>
          </select>
@@ -107,7 +107,7 @@
             <option value="Japanese">Japanese</option>
             <option value="Indian"selected>Indian </option>
             <% } %>
-          </datalist>
+          </select>
     
           <label for="imageUrl">Image</label>
           <input type="file" name="imageUrl" accept="image/png, image/jpg" value="<%- recipe.imageUrl %>">

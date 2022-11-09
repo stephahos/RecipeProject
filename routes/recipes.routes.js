@@ -34,11 +34,11 @@ router.get("/search", (req, res, next) => {
   res.render("recipes/search")
 })
 
-
-
-
-
-
+router.get('/result', async (req, res, next) =>{
+  const {level, nationaltypetag, cooktime} = req.query;
+    const results = await Recipe.find({level : level, nationaltypetag : nationaltypetag})
+    res.send('recipes/result', { results })
+})
 
 /* GET new recipe form page */
 router.get("/create", (req, res, next) => {
@@ -95,13 +95,15 @@ router.get('/allRecipes/:recipeId/delete', async (req, res) => {
 }})
 
 
-
 /* GET Myrecipes page */
 router.get("/myrecipes", (req, res, next) => {
   res.render("recipes/myrecipes")
 })
 
-
+/* GET MyFavorites page */
+router.get("/myfavorites", (req, res, next) => {
+  res.render("recipes/myfavorites")
+})
 
 
 module.exports = router;

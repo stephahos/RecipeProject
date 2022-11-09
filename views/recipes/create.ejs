@@ -5,11 +5,11 @@
 </div>
 <form method="POST" action="/recipes/create" enctype="multipart/form-data">
 <div class="createLabel">
-    <label>Dish Name</label>
+    <label>Recipe Name</label>
       <input type="text" name="name" placeholder="name"> 
 </div>
 <div class="createLabel">
-    <label for="ingredients">Ingredients List</label>
+    <label for="ingredients">Ingredients</label>
       <textarea name="ingredients"  rows='4' cols="50"> </textarea>
 </div>
 <div class="createLabel">
@@ -17,7 +17,7 @@
       <textarea name="instructions"  rows='4' cols="50" placeholder="instructions" > </textarea>
 </div>
 <div class="createLabel">
-    <label>cooktime</label>
+    <label>Cooking Time</label>
       <input type="number" id="cooktime" name="cooktime" placeholder="cooktime">
   </div>
   <div class="createLabel">
@@ -32,7 +32,7 @@
       <label for="foodtypetag">Dietery Requirements</label>
       <select name="foodtypetag" id="foodtypetag"> 
         <option value="Vegan">Vegan </option>
-        <option value="Vegatarian">Vegatarian </option>
+        <option value="Vegetarian">Vegetarian </option>
         <option value="Gluten-Free">Gluten-Free </option>
       </select>
   </div>
