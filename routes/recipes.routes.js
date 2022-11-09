@@ -36,14 +36,18 @@ router.get("/search", (req, res, next) => {
 
 // SUBMIT SEARCH FILTERS:
 router.get('/results', async (req, res) => {
-  const { name, nationaltypetag, cooktime } = req.query;
+  const { name, nationaltypetag, cooktime, level } = req.query;
+
   const results = await Recipe.find(
-    {name: name},
-    {name: cooktime}
+    {name: name , cooktime: cooktime , level: level}
+
+
   )
+
+  console.log(results)
   res.render("recipes/results", { results });
   
-  console.log(results)
+
 })
 
 /* GET new recipe form page */
