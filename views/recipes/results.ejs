@@ -3,12 +3,12 @@
 <ul class="ul-allrecipes">
   <% results.forEach(recipe => { %>
   <div class= "cardAll">
-  <li><a href="/recipes/result/<%- recipe._id %>"> <img class='card_imageAll' src = '<%- recipe.image %>'/> </a></li>
-  <div class="container"> 
-  <div class="card_title"><p><%= recipe.name %></p> </div>
-  <div class="card_cooktime"><p><%= recipe.cooktime %></p></div>
-  <div class="card_level"><p><%= recipe.level %></p></div>
+    <a href="/recipes/result/<%- recipe._id %>"> <img class='card_imageAll' src = '<%- recipe.image %>'/> 
+    <div class="container"> 
+      <div class="card_title"><p><%= recipe.name %></p> </div>
+      <div class="card_cooktime"><p><%= recipe.cooktime %></p></div>
+      <div class="card_level"><p><%= recipe.level %></p></div>
+    </div>
   </div>
-</div>
   <% }) %>
 </ul>

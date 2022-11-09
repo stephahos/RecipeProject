@@ -5,7 +5,7 @@
 <ul class="ul-allrecipes">
   <% Recipes.forEach(recipe => { %>
   <div class= "cardAll">
-  <li><a href="/recipes/allRecipes/<%- recipe._id %>"> <img class='card_imageAll' src = '<%- recipe.image %>'/> </a></li>
+  <a href="/recipes/allRecipes/<%- recipe._id %>"> <img class='card_imageAll' src = '<%- recipe.image %>'/>
   <div class="containertext"> 
   <div class="card_title"><p><%= recipe.name %></p> </div>
   <div class="card_cooktime"><p><%= recipe.cooktime %></p></div>
