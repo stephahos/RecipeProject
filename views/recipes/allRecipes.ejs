@@ -6,7 +6,7 @@
   <% Recipes.forEach(recipe => { %>
   <div class= "cardAll">
   <li><a href="/recipes/allRecipes/<%- recipe._id %>"> <img class='card_imageAll' src = '<%- recipe.image %>'/> </a></li>
-  <div class="container"> 
+  <div class="containertext"> 
   <div class="card_title"><p><%= recipe.name %></p> </div>
   <div class="card_cooktime"><p><%= recipe.cooktime %></p></div>
   <div class="card_level"><p><%= recipe.level %></p></div>
