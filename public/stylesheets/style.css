@@ -4,6 +4,7 @@ body {
   background-image: url("");
 }
 
+
 a {
   color: #00b7ff;
 }
@@ -12,8 +13,11 @@ h1 {
   color: 15px;
 }
 
-.col-md-3{
-  list-style-type: none
+.containerlog{
+  list-style-type: none;
+  display: flex;
+  grid-row: inherit;
+  
 }
 
 .container-header{ 
@@ -62,13 +66,9 @@ h1 {
 }
 
 
-.imagesRecipeList {
-  width: 20vw;
-  height: auto;
-}
 
 .imagesRecipedetails{
-  width: 100vw;
+  width: 60vw;
   height: auto;
 }
 
@@ -86,14 +86,13 @@ h1 {
   rgba(0,0,0,0.2);
 }
 
-.container{
-padding: 2px 16px;
-}
 
-.ul{
+.ul-allrecipes{
   list-style-type: none
 }
 
+
+/* My profile Card!!!*/
 .cards-list {
   z-index: 0;
   width: 100%;
@@ -102,7 +101,7 @@ padding: 2px 16px;
   flex-wrap: wrap;
 }
 
-.card {
+.cardmyprofile {
   margin: 30px auto;
   width: 300px;
   height: 300px;
@@ -110,30 +109,46 @@ padding: 2px 16px;
 box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.22);
   cursor: pointer;
   transition: 0.4s;
+  text-decoration: none
 }
 
-.card .card_image {
+
+.cardmyprofile .card_image {
   width: inherit;
   height: inherit;
   border-radius: 40px;
 }
 
-.card .card_image img {
+.cardmyprofile .card_image img {
   width: inherit;
   height: inherit;
   border-radius: 40px;
   object-fit: cover;
 }
 
-.card .card_title {
+.cardmyprofile .card_title {
   text-align: center;
   border-radius: 0px 0px 40px 40px;
   font-family: sans-serif;
+  color: #3cdbc0; 
   font-weight: bold;
   font-size: 30px;
   margin-top: -80px;
   height: 40px;
 }
+
+
+.card .card_level {
+  text-align: right;
+  border-radius: 0px 0px 40px 40px;
+  font-family: sans-serif;
+  color: #3cdbc0; 
+  font-weight: bold;
+  font-size: 40px;
+  margin-top: -80px;
+  height: 40px;
+}
+
 
 .card:hover {
   transform: scale(0.9, 0.9);
@@ -156,19 +171,88 @@ box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.2
   }
 }
 
+/*All recipes Cards*/
 
-/*
-.card {
+.cardAll{
   margin: 30px auto;
   width: 300px;
   height: 300px;
   border-radius: 40px;
-  background-image: url('https://i.redd.it/b3esnz5ra34y.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   background-repeat: no-repeat;
 box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.22);
   transition: 0.4s;
+  cursor: pointer;
 }
-*/
+
+
+.cardAll:hover {
+  transform: scale(0.9, 0.9);
+  box-shadow: 5px 5px 30px 15px rgba(0,0,0,0.25), 
+    -5px -5px 30px 15px rgba(0,0,0,0.22);
+}
+
+.card_imageAll{
+  width: 100%;
+  height: inherit;
+  border-radius: 40px;
+  object-fit: cover;
+}
+
+.card .card_cooktime {
+  text-align: left;
+  border-radius: 0px 0px 40px 40px;
+  font-family: sans-serif;
+  color: #3cdbc0; 
+  font-weight: bold;
+  font-size: 40px;
+  margin-top: -80px;
+  height: 40px;
+}
+
+
+
+
+.containernice{
+  display: block;
+  align-items: center;
+}
+
+.card_imagebis{
+  width: 30vw;
+  height: auto;
+}
+
+.containertext{
+  border-color: #3cdbc0;
+  border-radius: 40px;
+}
+
+/*Create Form View*/
+
+.containerCreate{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 500px;
+  border-radius: 20px;
+  box-shadow: 5px 5px 30px 15px rgba(0,0,0,0.25);
+  padding: 50px 50px;
+  gap: 30px;
+}
+
+.createLabel{
+  text-align: left;
+  align-items: center ;
+  justify-content: center;
+  padding: 0px 20px 10px;
+}
+
+.titlecreateform{
+  font-weight: 300;
+}
+
+

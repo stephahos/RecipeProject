@@ -41,11 +41,10 @@ router.post('/search', async (req, res) => {
 }
 )
 
-/*POST Login page */
-router.post('/search', async (req, res) => {
-  const { name } = req.body
-  await console.log(req.body)
-})
+
+
+
+
 
 /* GET new recipe form page */
 router.get("/create", (req, res, next) => {
@@ -100,5 +99,15 @@ router.get('/allRecipes/:recipeId/delete', async (req, res) => {
     console.log(error)
   }
 }})
+
+
+
+/* GET Myrecipes page */
+router.get("/myrecipes", (req, res, next) => {
+  res.render("recipes/myrecipes")
+})
+
+
+
 
 module.exports = router;
