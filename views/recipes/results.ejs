@@ -1,0 +1,16 @@
+<a href="/recipes/myprofilepage"> Home Page</a>
+
+<h2>THIS IS THE RESULTS PAGE!!!</h2>
+
+<ul class="ul">
+  <% Recipes.forEach(recipe => { %>
+  <div class= "card">
+  <li><a href="/recipes/allRecipes/<%- recipe._id %>"> <img class='imagesRecipeList' src = '<%- recipe.image %>'/> </a></li>
+  <div class="container"> 
+  <h4><%= recipe.name %></h4>
+  <h4><%= recipe.cooktime %></h4>
+  <h4><%= recipe.level %></h4>
+  </div>
+</div>
+  <% }) %>
+</ul>

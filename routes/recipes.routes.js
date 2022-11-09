@@ -34,6 +34,19 @@ router.get("/search", (req, res, next) => {
   res.render("recipes/search")
 })
 
+// SUBMIT SEARCH FILTERS:
+router.post('/search', async (req, res) => {
+  const { name, quantity, nationaltypetag } = req.body;
+  await console.log(name, quantity, nationaltypetag)
+}
+)
+
+/*POST Login page */
+router.post('/search', async (req, res) => {
+  const { name } = req.body
+  await console.log(req.body)
+})
+
 /* GET new recipe form page */
 router.get("/create", (req, res, next) => {
   res.render("recipes/create")

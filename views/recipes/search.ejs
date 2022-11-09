@@ -1,7 +1,8 @@
 <h1>Search for a recipe</h1>
 
+<div id="search-container"> 
 <form method="POST" action="/recipes/search">
-      <br><input type="text" name="name"   placeholder="Dish Name" > </br>
+      <label><input type="text" name="name"   placeholder="Dish Name" > </label>
       <br>
       
             <label for="Number">Preparation Time Minutes (Maximum):</label>
@@ -28,10 +29,13 @@
 
       <br><select id="nationaltypetag">
             <option value="">Cuisine</option>
-            <option value="asian">Asian</option>
-            <option value="french">French</option>
-            <option value="japanese">Japanese</option>
-            <option value="indian">Indian</option>
+        <option value="Asian">Asian</option>
+        <option value="TexMex">Tex-Mex</option>
+        <option value="Italian">Italian</option>
+        <option value="Scottish">Scottish</option>
+        <option value="French">French</option>
+        <option value="Japanese">Japanese</option>
+        <option value="Indian">Indian</option>
           </select> </br>
       <br><button> Search </button></br>
 </form>
