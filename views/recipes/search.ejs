@@ -1,10 +1,39 @@
 <h1>Search for a recipe</h1>
 
-<div class="containerCreate"> 
-<form method="get" action="/recipes/search">
-      <label for="name">Name</label>
-      <input type="text" name="name"  placeholder="Dish Name" />
-      <div class="col-auto">
-            <button class="col-form-label form-control"  aria-describedby="passwordHelpInline" type="submit">Search</button>
-      </div>
-</div>
+<div class="container"> 
+<form method="GET" action="/recipes/results">
+      <label><input type="text" name="name"   placeholder="Dish Name" > </label>
+      <br>
+            <label for="Number">Preparation Time Minutes (Maximum):</label>
+            <input type="number" id="cooktime" name="cooktime" min="1" max="999">
+      <br>
+            <input type="checkbox" id="veggie" name="veggie" value="vegetarian">
+            <label for="veggie"> Vegetarian</label>
+            <input type="checkbox" id="vegan" name="vegan" value="vegan">
+            <label for="vegan"> Vegan</label>
+            <input type="checkbox" id="gf" name="gf" value="gluten-free">
+            <label for="gf"> Gluten-Free</label>
+      <br>
+      <label for="level">LEVEL!!!</label>
+            <select multiple id="level" name="level">
+                  <option value="Easy">Easy</option>
+                  <option value='Amateur Chef'>Amateur Chef</option>
+                  <option value="Master Chef">Master Chef</option>
+            </select>
+            
+
+      <br>
+      <label for="nationaltypetag"></label>
+      <select  id="nationaltypetag" name="nationaltypetag">
+            <option value="">Cuisine</option>
+        <option value="Asian">Asian</option>
+        <option value="TexMex">Tex-Mex</option>
+        <option value="Italian">Italian</option>
+        <option value="Scottish">Scottish</option>
+        <option value="French">French</option>
+        <option value="Japanese">Japanese</option>
+        <option value="Indian">Indian</option>
+          </select> </br>
+      <br><button> Search </button></br>
+</form>
+

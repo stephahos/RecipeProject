@@ -32,13 +32,23 @@ router.get('/allRecipes/:recipeId', async (req, res, next) => {
 
 /* GET search page */
 router.get("/search", (req, res, next) => {
-  res.render("recipes/search")
+  res.render("recipes/search");
 })
 
-router.get('/result', async (req, res, next) =>{
-  const {level, nationaltypetag, cooktime} = req.query;
-    const results = await Recipe.find({level : level, nationaltypetag : nationaltypetag})
-    res.send('recipes/result', { results })
+// SUBMIT SEARCH FILTERS:
+router.get('/results', async (req, res) => {
+  const { name, nationaltypetag, cooktime, level } = req.query;
+
+  const results = await Recipe.find(
+    {name: name , cooktime: cooktime , level: level}
+
+
+  )
+
+  console.log(results)
+  res.render("recipes/results", { results });
+  
+
 })
 
 /* GET new recipe form page */
