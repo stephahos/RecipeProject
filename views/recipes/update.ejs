@@ -28,7 +28,12 @@
         <option value="Easy" > Easy </option>
         <option value="Amateur Chef" >Amateur Chef </option>
         <option value="Master Chef" selected>Master Chef</option>
-       <% }%>
+       <% } else{%>
+        <option value="Easy" > Easy </option>
+        <option value="Amateur Chef" >Amateur Chef </option>
+        <option value="Master Chef" >Master Chef</option>
+<%}%>
+       
        </select>
 
           <label for="foodtypetag">Dietery Requirements</label>
@@ -45,7 +50,11 @@
           <option value="Vegan">Vegan </option>
             <option value="Vegetarian">Vegetarian </option>
             <option value="Gluten-Free"selected>Gluten-Free</option>
-         <% }%>
+            <% } else{%>
+              <option value="Vegan">Vegan </option>
+              <option value="Vegetarian">Vegetarian </option>
+              <option value="Gluten-Free">Gluten-Free</option>
+      <%}%>
          </select>
     
           <label for="nationaltypetag">Cuisine</label>
@@ -106,7 +115,15 @@
             <option value="French"> French</option>
             <option value="Japanese">Japanese</option>
             <option value="Indian"selected>Indian </option>
-            <% } %>
+            <% } else{%>
+              <option value="Asian">Asian </option>
+            <option value="Tex-Mex"> Tex-Mex</option>
+            <option value="Italian">Italian </option>
+            <option value="Scottish">Scottish </option>
+            <option value="French"> French</option>
+            <option value="Japanese">Japanese</option>
+            <option value="Indian">Indian </option>
+      <%}%>
           </select>
     
           <label for="imageUrl">Image</label>

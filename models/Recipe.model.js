@@ -19,21 +19,25 @@ const recipeSchema = new Schema(
     },
     level: {
     type: String,
-    enum: ['Easy', 'Amateur Chef','Master Chef']
+    enum: ['Easy', 'Amateur Chef','Master Chef'],
+    required: true,
     },
     foodtypetag: {
       type: String,
-      enum: ['Vegan', 'Vegetarian','Gluten-Free']
+      enum: ['Vegan', 'Vegetarian','Gluten-Free'],
+      required: true,
     },
     nationaltypetag: {
       type: String,
-      enum: ['Asian', 'TexMex','Italian', 'Scottish', 'French','Japanese','Indian']
+      enum: ['Asian', 'TexMex','Italian', 'Scottish', 'French','Japanese','Indian'],
+      required: true,
     },
     image: {
       type: String,
     },
     creator: {
-      type: Schema.Types.ObjectId,ref:'User',
+      type: Schema.Types.ObjectId,
+      ref:'User',
     },
  },
 {

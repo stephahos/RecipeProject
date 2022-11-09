@@ -1,6 +1,7 @@
 const Recipe = require("../models/Recipe.model");
 const router = require("express").Router();
 const uploader = require('../config/cloudinary.config');
+const User = require("../models/User.model");
 
 //GET my profile page
 router.get("/myprofilepage", async(req, res, next) => {
@@ -48,7 +49,7 @@ router.get("/create", (req, res, next) => {
 /* POST new recipe from Create form page to My profile page */ 
 router.post('/create', uploader.single("imageUrl"),  async (req, res) => {
     try {
-      await Recipe.create({
+      const newRecipe = await Recipe.create({
         name: req.body.name,
         ingredients: req.body.ingredients,
         instructions: req.body.instructions,
@@ -59,6 +60,9 @@ router.post('/create', uploader.single("imageUrl"),  async (req, res) => {
         creator: req.session.user._id,
         image: req.file.path,
       })
+      const user = await User.findById(req.session.user._id)
+      user.created.push(newRecipe)
+      await user.save()
       res.redirect('/recipes/allRecipes')
     } catch (error) {
 
@@ -94,7 +98,6 @@ router.get('/allRecipes/:recipeId/delete', async (req, res) => {
   }
 }})
 
-
 /* GET Myrecipes page */
 router.get("/myrecipes", (req, res, next) => {
   res.render("recipes/myrecipes")
@@ -104,6 +107,8 @@ router.get("/myrecipes", (req, res, next) => {
 router.get("/myfavorites", (req, res, next) => {
   res.render("recipes/myfavorites")
 })
+
+
 
 
 module.exports = router;
