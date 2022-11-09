@@ -2,18 +2,27 @@
 
 <div class="containerCreate" id="create-container"> 
 <form method="POST" action="/recipes/allRecipes/<%= recipe._id %>/update">
+  <div class="createLabel">
         <label>Recipe Name</label>
           <input type="text" value="<%- recipe.name %>"> 
-    
+        </div>
+
+        <div class="createLabel">
         <label for="ingredients">Ingredients</label>
           <textarea name="ingredients" rows='4' cols="50"> <%- recipe.ingredients[0] %></textarea>
-    
+        </div>
+
+<div class="createLabel">
         <label for="instructions">Instructions</label>
           <textarea name="instructions"  rows='4' cols="50"><%- recipe.instructions %> </textarea>
-    
+    </div>
+
+    <div class="createLabel">
         <label>Cooking Time</label>
           <input type="number" name="cooktime"  value="<%- recipe.cooktime %>">
-    
+        </div>
+        
+      <div class="createLabel">
         <label for="level">Difficulty</label>
        <select name="level" id="level">
         <% if(recipe.level === "Amateur Chef" ) { %>
@@ -33,8 +42,8 @@
         <option value="Amateur Chef" >Amateur Chef </option>
         <option value="Master Chef" >Master Chef</option>
 <%}%>
-       
        </select>
+    </div>
 
       <div class="createLabel">
         <label for="level">Difficulty</label>
@@ -51,7 +60,11 @@
               <option value="Easy" > Easy </option>
               <option value="Amateur Chef" >Amateur Chef </option>
               <option value="Master Chef" selected>Master Chef</option>
-              <% }%>
+              <% } else{%>
+                <option value="Easy" > Easy </option>
+                <option value="Amateur Chef" >Amateur Chef </option>
+                <option value="Master Chef" >Master Chef</option>
+        <%}%>
           </select>
       </div>
 
@@ -76,7 +89,9 @@
               <option value="Gluten-Free">Gluten-Free</option>
       <%}%>
          </select>
-    
+        </div>
+
+        <div class="createLabel">
           <label for="nationaltypetag">Cuisine</label>
           <select name="nationaltypetag" id="nationaltypetag">  
             <% if(recipe.nationaltypetag === "Asian" ) { %>
@@ -145,9 +160,13 @@
             <option value="Indian">Indian </option>
       <%}%>
           </select>
-    
+        </div>
+
+        <div class="createLabel">
           <label for="imageUrl">Image</label>
           <input type="file" name="imageUrl" accept="image/png, image/jpg" value="<%- recipe.imageUrl %>">
-    
-          <button> Submit </button>
+        </div>
+        <div class="col-auto">
+          <button class="col-form-label form-control"> Submit </button>
+        </div>
     </form>

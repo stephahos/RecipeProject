@@ -3,19 +3,33 @@
 <h2>All Recipes</h2>
 
 <ul class="ul-allrecipes">
-  <% Recipes.forEach(recipe => { %>
-  <div class= "cardAll">
-  <li><a href="/recipes/allRecipes/<%- recipe._id %>"> <img class='card_imageAll' src = '<%- recipe.image %>'/> </a></li>
-  <div class="containertext"> 
-  <div class="card_title"><p><%= recipe.name %></p> </div>
-  <div class="card_cooktime"><p><%= recipe.cooktime %></p></div>
-  <div class="card_level"><p><%= recipe.level %></p></div>
-  </div>
-  <label for="id-of-input" class="custom-checkbox">
-    <input type="checkbox" id="id-of-input"/>
-    <i class="glyphicon glyphicon-star-empty"></i>
-    <i class="glyphicon glyphicon-star"></i>
-  </label>
-</div>
-  <% }) %>
+  <% Recipes.forEach(recipe=> { %>
+    <div class="cardAll">
+      <a href="/recipes/allRecipes/<%- recipe._id %>">
+        <img class='card_imageAll' src='<%- recipe.image %>' />
+      </a>
+      <div class="containertext">
+        <div class="card_title">
+          <p>
+            <%= recipe.name %>
+          </p>
+        </div>
+        <div class="card_cooktime">
+          <p>
+            <%= recipe.cooktime %>
+          </p>
+        </div>
+        <div class="card_level">
+          <p>
+            <%= recipe.level %>
+          </p>
+        </div>
+      </div>
+      <label for="id-of-input" class="custom-checkbox">
+        <input type="checkbox" id="id-of-input" />
+        <i class="glyphicon glyphicon-star-empty"></i>
+        <i class="glyphicon glyphicon-star"></i>
+      </label>
+    </div>
+    <% }) %>
 </ul>

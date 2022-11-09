@@ -178,13 +178,11 @@ box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.2
   width: 300px;
   height: 300px;
   border-radius: 40px;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-repeat: no-repeat;
 box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.22);
   transition: 0.4s;
   cursor: pointer;
+  display: grid;
+  grid-template: 200px 100px / 1fr;
 }
 
 
@@ -196,7 +194,7 @@ box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.2
 
 .card_imageAll{
   width: 100%;
-  height: inherit;
+  height: 100%;
   border-radius: 40px;
   object-fit: cover;
 }
@@ -272,7 +270,7 @@ label input[type="checkbox"] {
   position: absolute;
   top: 0.4em;
   left: -1.25em;
-  font-size: 0.75em;
+  font-size: 5em;
 }
 
 .custom-checkbox .glyphicon-star-empty {
