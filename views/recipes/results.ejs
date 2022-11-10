@@ -1,10 +1,32 @@
+<div class="col-autodetails">
+  <a href="/recipes/myprofilepage" class="btn btn-warning"> Go Back </a>
+  </div>
+
+<div class="myrecipes">
 <h2>Recipes by result</h2>
+</div>
 
+<div class="ul-allrecipes"></div>
 <% results.forEach(recipe => { %>
-  <a href="/recipes/results/<%- recipe._id %>"> <img class='card_imageAll' src = '<%- recipe.image %>'/>  
-    <div class="card_title"><p><%= recipe.name %></p> </div>
-    <div class="card_cooktime"><p><%= recipe.cooktime %></p></div>
-    <div class="card_level"><p><%= recipe.level %></p></div>
+  <div class="cardAll">
+  <a href="/recipes/results/<%- recipe._id %>"> 
+    <img class='card_imageAll' src = '<%- recipe.image %>'/>  
+  </a>  
+    <div class="containertext">
+      <div class="card_timeandlevel">
+ <h3><%= recipe.name %></h3>
+  <h4><%= recipe.cooktime %> min</h4>
+  <h4><%= recipe.level %></h4>
+  </div>
+  <div class="favstar">
+    <label for="id-of-input" class="custom-checkbox">
+      <i class="glyphicon glyphicon-star-empty"></i>
+      <i class="glyphicon glyphicon-star"></i>
+    <input type="checkbox" name="favcheckbox" id="id-of-input" />
+    </label>
+  </div>
 
+  </div>
+</div>
 <% }) %>
-
+</div>

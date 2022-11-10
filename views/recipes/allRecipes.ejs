@@ -5,7 +5,6 @@
 
 <div class="ul-allrecipes">
 
-
   <% Recipes.forEach(recipe=> { %>
 
     <div class="cardAll">
@@ -21,13 +20,17 @@
           <h4><%= recipe.level %></h4>
         </div>
 
-        <div class="favstar">
+        <form method="POST" action="/recipes/myfavorites">
+        <button class="favstar"> 
           <label for="id-of-input" class="custom-checkbox">
             <i class="glyphicon glyphicon-star-empty"></i>
+            <i class="glyphicon glyphicon-star"></i>
           <input type="checkbox" name="favcheckbox" id="id-of-input" />
-          <i class="glyphicon glyphicon-star"></i>
           </label>
-        </div>
+          <input hidden name="recipeId" value="<%- recipe._id %>"/>
+        </button>
+      </form>
+
       </div>
 
     </div>

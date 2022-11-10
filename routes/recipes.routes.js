@@ -122,9 +122,16 @@ console.log(currentUser)
 
 /* GET myfavorites page */
 router.get("/myfavorites", (req, res, next) => {
+  
   res.render("recipes/myfavorites")
 })
 
-
+router.post("/myfavorites", async (req, res, next ) =>{
+  console.log(req.body)
+  const user = await User.findById(req.session.user._id)
+  user.favorites.push(req.body.recipeId)
+  await user.save()
+  res.redirect('/recipes/myfavorites')
+})
 
 module.exports = router;

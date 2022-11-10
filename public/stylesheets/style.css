@@ -4,6 +4,19 @@ body {
   background-image: url("");
 }
 
+.bg_img{
+position: relative;
+}
+
+.bgTextBox{
+  position: absolute;
+}
+
+.imgBG{
+  width: 100%;
+  height: auto;
+}
+
 .container{
   display: flex;
 }
@@ -131,9 +144,10 @@ padding: 20px;
 
 
 .ul-allrecipes{
-  list-style-type: none
+  list-style-type: none;
+  display: flex;
+  flex-direction: column-reverse;
 }
-
 
 /* My profile Card!!!*/
 
