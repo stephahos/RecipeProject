@@ -296,6 +296,14 @@ padding-left: 20px;
 
 /*Create Form View*/
 
+.background{
+  background-image: url("../images/balsamic-brussel-sprouts-rotate.jpg");
+  justify-content: flex-end;
+  display: block;
+  position: relative;
+  display: flex;
+  }
+
 .containerCreate{
   display: flex;
   flex-direction: column;
@@ -309,6 +317,8 @@ padding-left: 20px;
   margin-left: auto ;
   margin-top: 50px;
   gap: 30px;
+  background-color: white;
+  opacity: 0.9;
 }
 
 .createLabel{
