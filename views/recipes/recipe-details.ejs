@@ -1,18 +1,25 @@
-<a href="/recipes/allRecipes/"> See all Recipes </a>
+<div class="btn btn-warning">
+<a href="/recipes/allRecipes">Go Back</a>
+</div>
 
-<p>The Recipe details</p>
-
+<div class="containerDetails">
+<div class="imageDetails">
 <img class='imagesRecipedetails' src = '<%- recipe.image %>'/>
-<h4><%= recipe.name %></h4>
-<h4><%= recipe.cooktime %></h4>
-<h4><%= recipe.level %></h4>
-<h4><%= recipe.instructions %></h4>
-<ul>
-  <% recipe.ingredients.forEach(currentIngredients => { %>
+ </div>
+<div class="alldetailstext">
+<div class="detailstitle"> <h3>Dish name : <%= recipe.name %></h3></div>
+<div class="detailstitle"> <h4>Prep'Time : <%= recipe.cooktime %></h4></div>
+<div class="detailstitle"> <h4>Difficulty : <%= recipe.level %></h4></div>
+<div class="detailstitle"> <h4>Instructions : <%= recipe.instructions %></h4></div>
+<div class="detailstitle"> <h4>Ingredients : <% recipe.ingredients.forEach(currentIngredients => { %> </h4>
   <li><%= currentIngredients%></li>
   <% }) %>
-</ul>
+</div>
+</div>
 
-<a href="/recipes/allRecipes/<%= recipe._id %>/update"> Update the recipe </a>
-
-<a href="/recipes/allRecipes/<%= recipe._id %>/delete">Delete recipe</a>
+<div class="col-autodetails">
+<a href="/recipes/allRecipes/<%= recipe._id %>/update" class="btn btn-warning"> Update the recipe </a>
+</div>
+<div class="col-autodetails">
+<a href="/recipes/allRecipes/<%= recipe._id %>/delete" class="btn btn-warning">Delete recipe</a>
+</div>

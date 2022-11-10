@@ -35,16 +35,19 @@ router.get("/search", (req, res, next) => {
   res.render("recipes/search");
 })
 
-// SUBMIT SEARCH FILTERS:
+/*GET Search for recipes*/
 router.get('/results', async (req, res) => {
-  const { nationaltypetag, cooktime, level } = req.query;
-
-  const results = await Recipe.find(
-    {cooktime: cooktime , level: level, nationaltypetag: nationaltypetag}
-  )
+  const { nationaltypetag, cooktime, level, foodtypetag } = req.query;
+  const results = await Recipe.find({nationaltypetag: nationaltypetag , cooktime: cooktime, level: level, foodtypetag:foodtypetag})
   console.log(results)
   res.render("recipes/results", { results });
 })
+
+router.get('/result/:recipeId', async (req, res, next) => {
+  const recipe = await Recipe.findById(req.params.recipeId)
+  res.render('recipes/recipe-details', { recipe })
+})
+
 
 /* GET new recipe form page */
 router.get("/create", (req, res, next) => {
@@ -70,7 +73,6 @@ router.post('/create', uploader.single("imageUrl"),  async (req, res) => {
       await user.save()
       res.redirect('/recipes/allRecipes')
     } catch (error) {
-
         console.log(error)
       res.render('recipes/create')
         console.log('render the recipe creation form view so the user can try again')
@@ -103,16 +105,24 @@ router.get('/allRecipes/:recipeId/delete', async (req, res) => {
   }
 }})
 
-/* GET Myrecipes page */
-router.get("/myrecipes", (req, res, next) => {
-  res.render("recipes/myrecipes")
+
+/* GET My recipe page */
+router.get("/myrecipes", async (req, res, next) => {
+  try {
+const newRecipes = await User.find(req.body.created)
+console.log(newRecipes)
+  res.render("recipes/myrecipes", { newRecipes })
+  
+} catch (err) {
+  console.log(err)
+}
 })
 
-/* GET MyFavorites page */
+
+/* GET myfavorites page */
 router.get("/myfavorites", (req, res, next) => {
   res.render("recipes/myfavorites")
 })
-
 
 
 

@@ -1,0 +1,12 @@
+
+<div class="myrecipes">
+    <h3> My Recipes</h3>
+</div>
+
+<% newRecipes.forEach(newRecipe => { %>
+    <a href="/recipes/myrecipes/<%- newRecipe._id %>"> <img class='card_imageAll' src = '<%- newRecipe.image %>'/>  
+      <div class="card_title"><p><%= newRecipe.name %></p> </div>
+      <div class="card_cooktime"><p><%= newRecipe.cooktime %></p></div>
+      <div class="card_level"><p><%= newRecipe.level %></p></div>
+  
+  <% }) %>

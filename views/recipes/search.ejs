@@ -1,36 +1,44 @@
-<div class="containerCreate"> 
-<form method="GET" action="/recipes/results">
+<div class="Search-box" style="background-image:url(balsamic-brussel-sprouts-rotate.jpg); position: relative;"> 
+      <img src="../images/balsamic-brussel-sprouts-rotate.jpg" class="searchimg" style="position: relative"/>
+
+      <div class="containerSearch" style="position: absolute"> 
+
+      <form method="GET" action="/recipes/results">
 <div class="titlecreateform">
-<h1>Search for a recipe</h1>
+<h1>Find new recipes</h1>
 </div>
       <div class="createLabel">
-      <label><input type="text" name="name" placeholder="Dish Name" > </label>
-</div>
+      <label><input type="text" name="name" placeholder="Dish Name"> </label>
+      </div>
+
 <div class="createLabel">
       <label for="Number">Preparation Time Minutes (Maximum):</label>
       <input type="number" id="cooktime" name="cooktime" min="1" max="999">
 </div>
+
 <div class="createLabel">
-      <label for="checkbox">Preparation Time Minutes (Maximum):</label>
-      <input type="checkbox" id="veggie" name="veggie" value="vegetarian">
-      <label for="veggie"> Vegetarian</label>
-      <input type="checkbox" id="vegan" name="vegan" value="vegan">
-      <label for="vegan"> Vegan</label>
-      <input type="checkbox" id="gf" name="gf" value="gluten-free">
-      <label for="gf"> Gluten-Free</label>    
-</div>    
+      <label for="foodtypetag">Dietery Requirements</label>
+      <select name="foodtypetag" id="foodtypetag"> 
+       <option value=""> </option>
+        <option value="Vegan">Vegan </option>
+        <option value="Vegetarian">Vegetarian </option>
+        <option value="Gluten-Free">Gluten-Free </option>
+      </select>
+  </div>
+
 <div class="createLabel">
       <label for="level">Difficulty</label>
-      <select multiple id="level" name="level">
+      <select id="level" name="level">
+      <option value=""> </option>
       <option value="Easy">Easy</option>
       <option value='Amateur Chef'>Amateur Chef</option>
       <option value="Master Chef">Master Chef</option>
       </select>
 </div>
 <div class="createLabel">  
-      <label for="nationaltypetag"></label>
-      <select  id="nationaltypetag" name="nationaltypetag">
-      <option value="">Cuisine</option>
+      <label for="nationaltypetag">Cuisine</label>
+      <select id="nationaltypetag" name="nationaltypetag">
+      <option value=""> </option>
       <option value="Asian">Asian</option>
       <option value="TexMex">Tex-Mex</option>
       <option value="Italian">Italian</option>
@@ -41,9 +49,8 @@
       </select>
 </div>   
       <div class="col-auto">
-            <button class="col-form-label form-control"> Submit </button>
-          </div>
-</div>
-
+            <button class="col-form-label form-control"> Search </button>
+      </div>
 </form>
-
+</div> 
+</div>

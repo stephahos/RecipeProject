@@ -4,6 +4,18 @@ body {
   background-image: url("");
 }
 
+.container{
+  display: flex;
+}
+
+.collapse {
+  display: flex;
+}
+
+#navbar-nav{
+  align-items: flex-end;
+  justify-content: flex-end;
+}
 
 a {
   color: #00b7ff;
@@ -13,11 +25,20 @@ h1 {
   color: 15px;
 }
 
+.nav-log{
+display: flex;
+align-items: flex-end;
+justify-content: flex-end;
+}
+
+#navbar-brand{
+  border-radius: 40%;
+}
+
 .containerlog{
   list-style-type: none;
   display: flex;
   grid-row: inherit;
-  
 }
 
 .container-header{ 
@@ -66,9 +87,31 @@ h1 {
 }
 
 
+.logoImg{
+  width: 150px;
+  height: auto;
+  border-radius: 50%;
+}
+
+.col-autodetails{
+  padding-top: 10px;
+}
+
+.containerDetails{
+display: flex;
+padding: 20px;
+box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.22);
+}
+
+.alldetailstext{
+  align-items: center;
+padding: 20px;
+}
 
 .imagesRecipedetails{
-  width: 60vw;
+  align-items: center;
+  border-radius: 20px;
+  width: 30vw;
   height: auto;
 }
 
@@ -93,6 +136,11 @@ h1 {
 
 
 /* My profile Card!!!*/
+
+.helloUser{
+  padding: 10px;
+}
+
 .cards-list {
   z-index: 0;
   width: 100%;
@@ -176,7 +224,7 @@ box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.2
 .cardAll{
   margin: 30px auto;
   width: 300px;
-  height: 300px;
+  height: 350px;
   border-radius: 40px;
 box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.22);
   transition: 0.4s;
@@ -185,6 +233,27 @@ box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.2
   grid-template: 200px 100px / 1fr;
 }
 
+.card_timeandlevel{
+ padding: 0;
+padding-left: 20px;
+  display: block;
+  align-items: center;
+  justify-content: center;
+}
+
+.favstar{
+  margin: 0;
+}
+
+.card_title{
+  align-items: center;
+}
+
+.containertext{
+  display: flex;
+  flex-direction: row;
+  color: #3cdbc0;
+}
 
 .cardAll:hover {
   transform: scale(0.9, 0.9);
@@ -210,19 +279,6 @@ box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.2
   height: 40px;
 }
 
-.containernice{
-  display: block;
-  align-items: center;
-}
-
-.card_imagebis{
-  width: 30vw;
-  height: auto;
-}
-
-.containertext{
-  color: #3cdbc0;
-}
 
 /*Create Form View*/
 
@@ -251,7 +307,6 @@ box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.2
 .titlecreateform{
   font-weight: 300;
 }
-
 
 
 /* Favorite*/
@@ -288,5 +343,35 @@ label input[type="checkbox"] {
 
 .custom-checkbox input[type="checkbox"]:checked ~ .glyphicon-star {
   opacity: 1;
+}
+
+.Search-box{
+background-image: url("/images/balsamic-brussel-sprouts-rotate.jpg");
+display: block;
+position: relative;
+width: cover;
+height: auto;
+}
+.searchimg{
+display: block;
+position: relative;
+width: 100%;
+height: auto;
+}
+
+.containerSearch{
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 500px;
+  border-radius: 20px;
+  box-shadow: 5px 5px 30px 15px rgba(0,0,0,0.25);
+  padding: 50px 50px;
+  margin-right: auto ;
+  margin-left: auto ;
+  margin-top: 50px;
+  gap: 30px;
 }
 

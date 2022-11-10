@@ -46,29 +46,6 @@
     </div>
 
       <div class="createLabel">
-        <label for="level">Difficulty</label>
-          <select name="level" id="level">
-            <% if(recipe.level === "Amateur Chef" ) { %>
-              <option value="Easy"> Easy </option>
-              <option value="Amateur Chef" selected>Amateur Chef </option>
-              <option value="Master Chef">Master Chef</option>
-              <%}else if (recipe.level === "Easy" ) { %>
-              <option value="Easy" selected> Easy </option>
-              <option value="Amateur Chef" >Amateur Chef </option>
-              <option value="Master Chef">Master Chef</option>
-              <% } else if (recipe.level === "Master Chef" ) { %>
-              <option value="Easy" > Easy </option>
-              <option value="Amateur Chef" >Amateur Chef </option>
-              <option value="Master Chef" selected>Master Chef</option>
-              <% } else{%>
-                <option value="Easy" > Easy </option>
-                <option value="Amateur Chef" >Amateur Chef </option>
-                <option value="Master Chef" >Master Chef</option>
-        <%}%>
-          </select>
-      </div>
-
-      <div class="createLabel">
         <label for="foodtypetag">Dietery Requirements</label>
         <select name="foodtypetag" id="foodtypetag"> 
         <% if(recipe.foodtypetag === "Vegan" ) { %>

@@ -1,35 +1,35 @@
-<a href="/recipes/myprofilepage"> Home Page</a>
 
-<h2>All Recipes</h2>
+<div class="col-autodetails">
+  <a href="/recipes/myprofilepage" class="btn btn-warning"> Go Back </a>
+  </div>
 
-<ul class="ul-allrecipes">
+<div class="ul-allrecipes">
+
+
   <% Recipes.forEach(recipe=> { %>
+
     <div class="cardAll">
+
       <a href="/recipes/allRecipes/<%- recipe._id %>">
         <img class='card_imageAll' src='<%- recipe.image %>' />
       </a>
+
       <div class="containertext">
-        <div class="card_title">
-          <p>
-            <%= recipe.name %>
-          </p>
+        <div class="card_timeandlevel">
+          <h3><%= recipe.name %></h3>
+          <h4><%= recipe.cooktime %> min</h4>
+          <h4><%= recipe.level %></h4>
         </div>
-        <div class="card_cooktime">
-          <p>
-            <%= recipe.cooktime %>
-          </p>
-        </div>
-        <div class="card_level">
-          <p>
-            <%= recipe.level %>
-          </p>
+
+        <div class="favstar">
+          <label for="id-of-input" class="custom-checkbox">
+            <i class="glyphicon glyphicon-star-empty"></i>
+          <input type="checkbox" name="favcheckbox" id="id-of-input" />
+          <i class="glyphicon glyphicon-star"></i>
+          </label>
         </div>
       </div>
-      <label for="id-of-input" class="custom-checkbox">
-        <input type="checkbox" id="id-of-input" />
-        <i class="glyphicon glyphicon-star-empty"></i>
-        <i class="glyphicon glyphicon-star"></i>
-      </label>
+
     </div>
     <% }) %>
-</ul>
+</div>

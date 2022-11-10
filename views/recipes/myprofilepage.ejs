@@ -1,11 +1,11 @@
 
- 
-    <li><a href="/recipes/myrecipes" >my recipes</a></li>
 
-<h3>My Profile HomePage</h3>
-<h4>Hello <%- user.username %> </h4>
-<h4>What would you like to cook today?</h4>
-
+<div class="helloUser">
+<h2>Hello <%- user.username %> ,</h2>
+</div>
+<div class="helloUser">
+<h2>What would you like to cook today?</h2>
+</div>
 <div class="cards-list">
   
     <a href="/recipes/search" class="cardmyprofile">
@@ -20,16 +20,15 @@
     <!-- <img src="https://media.giphy.com/media/ehUq9YPy1vKoBrGbkE/giphy.gif" >-->
     <img src="https://media.giphy.com/media/l0Iy4URhBy8Y82vLO/giphy.gif" ></div> 
      <div class="card_title ">
-        <p>Share your recipe!</p>
+        <p>Share my recipe!</p>
       </div>
     </a>
     
     <a href="/recipes/allRecipes" class="cardmyprofile">
       <div class="card_image">
-      <!--  <img src="https://media.giphy.com/media/GRYk355fcaKJi/giphy.gif" ></div>-->
         <img src="https://media.giphy.com/media/m225vjrXFvEevNormi/giphy.gif" ></div>
       <div class="card_title title-white">
-        <p>All recipes</p>
+        <p>See all recipes</p>
       </div>
     </a>
       
@@ -37,7 +36,15 @@
       <div class="card_image">
         <img src="https://media.giphy.com/media/svdsMNSzOShzO/giphy.gif"/></div>
         <div class="card_title title-white">
-        <p>your favorites</p>
+        <p>My favorites</p>
+      </div>
+    </a>
+
+    <a href="/recipes/myrecipes" class="cardmyprofile">
+      <div class="card_image">
+        <img src="https://media.giphy.com/media/GRYk355fcaKJi/giphy.gif" ></div>
+        <div class="card_title title-white">
+        <p>My recipes</p>
       </div>
     </a>
     
