@@ -40,7 +40,7 @@ router.get("/search", (req, res, next) => {
 /*GET Search for recipes*/
 router.get('/results', async (req, res) => {
   const { nationaltypetag, cooktime, level, foodtypetag } = req.query;
-  const results = await Recipe.find({nationaltypetag: nationaltypetag , cooktime: cooktime, level: level, foodtypetag:foodtypetag})
+  const results = await Recipe.find({nationaltypetag: nationaltypetag , cooktime: {$lte: cooktime}, level: level})
   console.log(results)
   res.render("recipes/results", { results });
 })
