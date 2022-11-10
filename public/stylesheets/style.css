@@ -360,12 +360,15 @@ label input[type="checkbox"] {
 }
 
 .Search-box{
-background-image: url("/images/balsamic-brussel-sprouts-rotate.jpg");
+background-image: url("../images/balsamic-brussel-sprouts-rotate.jpg");
 display: block;
 position: relative;
-width: cover;
-height: auto;
+width: 1590px;
+height: 800px;
+display: flex;
+justify-content: center;
 }
+
 .searchimg{
 display: block;
 position: relative;
@@ -387,5 +390,7 @@ height: auto;
   margin-left: auto ;
   margin-top: 50px;
   gap: 30px;
+  background-color: white;
+  opacity: 0.9;
 }
 

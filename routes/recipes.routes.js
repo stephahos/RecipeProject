@@ -119,11 +119,10 @@ console.log(currentUser)
 }
 })
 
-
 /* GET myfavorites page */
-router.get("/myfavorites", (req, res, next) => {
-  
-  res.render("recipes/myfavorites")
+router.get("/myfavorites", async (req, res, next) => {
+  const currentFav = await User.findById(req.session.user._id)
+  res.render("recipes/myfavorites", { currentFav })
 })
 
 router.post("/myfavorites", async (req, res, next ) =>{
@@ -133,5 +132,6 @@ router.post("/myfavorites", async (req, res, next ) =>{
   await user.save()
   res.redirect('/recipes/myfavorites')
 })
+
 
 module.exports = router;

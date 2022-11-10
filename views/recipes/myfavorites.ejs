@@ -1,7 +1,20 @@
 
 
 
-
-
+<% currentFav.favorites.forEach(favRecipe => { %>
+    <div class="cardAll">
+    <a href="/recipes/results/<%- favRecipe._id %>"> 
+      <img class='card_imageAll' src = '<%- favRecipe.image %>'/>  
+    </a>  
+    <div class="containertext">
+        <div class="card_timeandlevel">
+            <h3><%= favRecipe.name %></h3> 
+            <h4><%= favRecipe.cooktime %> min</h4>
+            <h4><%= favRecipe.level %></h4>
+        </div>
+    </div>
+</div>
+<% }) %>
+</div>
 
 
