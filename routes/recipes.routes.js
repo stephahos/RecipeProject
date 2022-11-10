@@ -30,6 +30,13 @@ router.get('/allRecipes/:recipeId', async (req, res, next) => {
   res.render('recipes/recipe-details', { recipe })
 })
 
+//Get Recipe by ID => Recipe Details
+router.get('/myrecipes/:recipeId', async (req, res, next) => {
+  const recipe = await Recipe.findById(req.params.recipeId)
+  res.render('recipes/recipe-details', { recipe })
+})
+
+
 
 /* GET search page */
 router.get("/search", (req, res, next) => {
@@ -45,7 +52,7 @@ router.get('/results', async (req, res) => {
   res.render("recipes/results", { results });
 })
 
-router.get('/result/:recipeId', async (req, res, next) => {
+router.get('/results/:recipeId', async (req, res, next) => {
   const recipe = await Recipe.findById(req.params.recipeId)
   res.render('recipes/recipe-details', { recipe })
 })
