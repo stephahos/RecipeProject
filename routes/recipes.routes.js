@@ -30,18 +30,22 @@ router.get('/allRecipes/:recipeId', async (req, res, next) => {
   res.render('recipes/recipe-details', { recipe })
 })
 
+
 /* GET search page */
 router.get("/search", (req, res, next) => {
   res.render("recipes/search");
 })
 
+
 /*GET Search for recipes*/
 router.get('/results', async (req, res) => {
-  const { nationaltypetag, cooktime, level, foodtypetag } = req.query;
-  const results = await Recipe.find({nationaltypetag: nationaltypetag , cooktime: cooktime, level: level, foodtypetag:foodtypetag})
+  const { nationaltypetag, cooktime, level } = req.query;
+  const results = await Recipe.find({nationaltypetag: nationaltypetag , cooktime: {$lte:cooktime}, level: level})
   console.log(results)
   res.render("recipes/results", { results });
 })
+
+
 
 router.get('/result/:recipeId', async (req, res, next) => {
   const recipe = await Recipe.findById(req.params.recipeId)
@@ -109,9 +113,9 @@ router.get('/allRecipes/:recipeId/delete', async (req, res) => {
 /* GET My recipe page */
 router.get("/myrecipes", async (req, res, next) => {
   try {
-const newRecipes = await User.find(req.body.created)
-console.log(newRecipes)
-  res.render("recipes/myrecipes", { newRecipes })
+const currentUser = await User.findById(req.session.user._id).populate("created")
+console.log(currentUser)
+  res.render("recipes/myrecipes", { currentUser })
   
 } catch (err) {
   console.log(err)
