@@ -3,6 +3,10 @@
   <a href="/recipes/myprofilepage" class="btn btn-warning"> Go Back </a>
   </div>
 
+  <div class="myrecipes">
+    <h3>All Recipes</h3>
+</div>
+
 <div class="ul-allrecipes">
 
   <% Recipes.forEach(recipe=> { %>
@@ -20,11 +24,13 @@
           <h4><%= recipe.level %></h4>
         </div>
 
-        <form method="POST" action="/recipes/myfavorites">
+        <form method="POST" action="/recipes/myfavorites" class="formfav">
         <button class="favstar"> 
           <label for="id-of-input" class="custom-checkbox">
-            <i class="glyphicon glyphicon-star-empty"></i>
+          <div class="stars">
+          <i class="glyphicon glyphicon-star-empty"></i>
             <i class="glyphicon glyphicon-star"></i>
+          </div> 
           <input type="checkbox" name="favcheckbox" id="id-of-input" />
           </label>
           <input hidden name="recipeId" value="<%- recipe._id %>"/>
