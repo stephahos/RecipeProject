@@ -4,12 +4,35 @@ body {
   background-image: url("");
 }
 
-.bg_img{
+.containerBg{
+display: flex;
+width: 1800px;
+height: 800px;
+justify-content: center;
+align-items: center;
 position: relative;
+background-image: url("../images/multiple.PNG"); 
+background-size: 20vw;
 }
 
 .bgTextBox{
+  color: #ffc720;
+  display: flex;
+  width: 500px;
+  height: 400px;
+  font-style: italic;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   position: absolute;
+  background-color: white;
+  box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.22);
+  opacity: 0.9;
+  border-radius: 40px;
+}
+
+.bg_img{
+position: relative;
 }
 
 .imgBG{
@@ -37,6 +60,26 @@ a {
 h1 {
   color: 15px;
 }
+
+.whitediv{
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  background-color: white;
+  opacity: 0.9;
+  border-radius: 40px;
+  box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.22);
+}
+
+.row{
+  display: flex;
+  padding: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
 
 .nav-log{
 display: flex;
@@ -134,8 +177,8 @@ padding: 20px;
   transition: 0.3s;
   border-radius: 5px;
   width: 40vw;
-
 }
+
 
 .card:hover{
   box-shadow: 0 8px 16px 0 
@@ -298,10 +341,12 @@ padding-left: 20px;
 
 .background{
   background-image: url("../images/balsamic-brussel-sprouts-rotate.jpg");
-  justify-content: flex-end;
+  justify-content: center;
   display: block;
   position: relative;
   display: flex;
+  background-repeat: no-repeat;
+  background-size: cover;
   }
 
 .containerCreate{
@@ -373,10 +418,12 @@ label input[type="checkbox"] {
 background-image: url("../images/balsamic-brussel-sprouts-rotate.jpg");
 display: block;
 position: relative;
-width: 1590px;
+width: 1800px;
 height: 800px;
 display: flex;
 justify-content: center;
+background-repeat: no-repeat;
+background-size: cover;
 }
 
 .searchimg{

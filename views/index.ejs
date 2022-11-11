@@ -1,6 +1,15 @@
-<div class="bgTextBox">
-    <h1>DELICIOUS</h1>
-    <p>Welcome !</p>
-    <p>Share your favorite recipes with the world ! </p>
+
+
+<% if(!user) { %>
+  <div class="containerBg"> 
+  <!--<img src="../images/multiple.jpg" class="imgBG" alt="bg">-->
+    <div class="bgTextBox">
+      <h1>Gif'ted recipes</h1>
+      <h2>Share your recipes and get inspired.</h2>
+    </div>
   </div>
-</div>
+  </div>
+    <%} else { %>
+  
+    <% }%>
+

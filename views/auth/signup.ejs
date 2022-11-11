@@ -1,14 +1,32 @@
-<h1>Sign up</h1>
-<form method="POST" action="/auth/signup">
-  <label>Username:<input type="text" name="username" required /></label>
-  <label
-    >Email:<input <% if (typeof errorMessage !== "undefined") { %> style="border-color: red;" <% }
-    %> type="email" name="email" required /></label
-  >
+
+<div class="containerBg">
+
+  <div class="whitediv">
+<div class="row g-3 align-items-center">
+  <div><h1>Sign up</h1></div>
+<div> <form method="POST" action="/auth/signup"></div>
+  <div class="col-auto">
+<label>Username:<input type="text" name="username" required /></label>
+</div>
+
+<div class="col-auto">
+ <label>Email:<input <% if (typeof errorMessage !== "undefined") { %> style="border-color: red;" <% }
+    %> type="email" name="email" required /></label>
+ </div>
+
+ <div class="col-auto">
   <label>Password:<input type="password" name="password" required /></label>
-  <button type="submit">Sign Up</button>
+</div>
+ 
+<div class="col-auto">
+<button class="col-form-label form-control" type="submit">Sign Up</button>
+</div>
 </form>
 
 <% if (typeof errorMessage !== "undefined") { %>
   <p><%= errorMessage %></p>
   <% } %>
+
+</div>
+</div>
+</div>

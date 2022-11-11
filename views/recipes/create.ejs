@@ -10,7 +10,7 @@
 <form method="POST" action="/recipes/create" enctype="multipart/form-data">
 <div class="createLabel">
     <label>Recipe Name</label>
-      <input type="text" name="name" placeholder="name"> 
+      <input type="text" name="name" placeholder=""> 
 </div>
 <div class="createLabel">
     <label for="ingredients">Ingredients</label>
@@ -21,8 +21,8 @@
       <textarea name="instructions"  rows='4' cols="50" placeholder="instructions" > </textarea>
 </div>
 <div class="createLabel">
-    <label>Cooking Time</label>
-      <input type="number" id="cooktime" name="cooktime" placeholder="cooktime">
+    <label>Prep' Time</label>
+      <input type="number" id="cooktime" name="cooktime" placeholder="minutes">
   </div>
   <div class="createLabel">
     <label for="level">Difficulty</label>
@@ -35,7 +35,7 @@
 
   <div class="createLabel">
       <label for="foodtypetag">Dietery Requirements</label>
-      <select name="foodtypetag" id="foodtypetag"> 
+      <select name="foodtypetag" id="foodtypetag">
         <option value="Vegan">Vegan </option>
         <option value="Vegetarian">Vegetarian </option>
         <option value="Gluten-Free">Gluten-Free </option>

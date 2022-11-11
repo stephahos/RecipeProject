@@ -128,7 +128,7 @@ console.log(currentUser)
 
 /* GET myfavorites page */
 router.get("/myfavorites", async (req, res, next) => {
-  const currentFav = await User.findById(req.session.user._id)
+  const currentFav = await User.findById(req.session.user._id).populate("favorites")
   res.render("recipes/myfavorites", { currentFav })
 })
 
